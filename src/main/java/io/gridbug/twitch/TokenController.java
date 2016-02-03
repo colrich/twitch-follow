@@ -24,7 +24,7 @@ public class TokenController {
 		
 		try {
 			// we take the input set as a csv
-			CSVReader reader = new CSVReader(new FileReader("/Users/REDACTED/hayekm.csv"));
+			CSVReader reader = new CSVReader(new FileReader("/Users/colrich/hayekm.csv"));
 	
 			String[] line = reader.readNext(); // read off header
 			while ((line = reader.readNext()) != null) {
@@ -35,7 +35,7 @@ public class TokenController {
 					headers.add("Accept", "application/vnd.twitchtv.v3+json");
 					headers.add("Authorization", "OAuth " + token);
 					HttpEntity<String> entity = new HttpEntity<>("", headers);
-					template.put(urlBase+"/users/REDACTED/follows/channels/"+line[1].trim().replace("\"", ""), entity);
+					template.put(urlBase+"/users/gr1dbug/follows/channels/"+line[1].trim().replace("\"", ""), entity);
 				}
 			}
 		}

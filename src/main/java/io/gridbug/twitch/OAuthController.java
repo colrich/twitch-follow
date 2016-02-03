@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class OAuthController {
 
-	@RequestMapping(value="/**", method=RequestMethod.GET)
+	@RequestMapping(value="/callback", method=RequestMethod.GET)
 	public String token(HttpServletRequest request) {
 		// the token is passed to the client after the #, so this js snippet redirects to another 
 		// controller after removing the hash.
